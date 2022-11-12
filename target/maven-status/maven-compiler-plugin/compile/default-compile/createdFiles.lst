@@ -1,0 +1,6 @@
+br\com\unincor\sistemacomanda\SistemaComanda.class
+br\com\unincor\sistemacomanda\model\domain\TipoUnidade.class
+br\com\unincor\sistemacomanda\model\domain\Produto.class
+br\com\unincor\sistemacomanda\model\domain\Cliente.class
+br\com\unincor\sistemacomanda\model\domain\Pessoa.class
+br\com\unincor\sistemacomanda\model\domain\Pedido.class
