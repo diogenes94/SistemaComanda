@@ -8,6 +8,7 @@ import java.util.List;
  *
  * @author dioge
  */
+
 public class Pedido implements Serializable {
     
     private Long id;
