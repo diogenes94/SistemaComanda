@@ -5,22 +5,21 @@
 package br.com.unincor.sistemacomanda.model.domain;
 
 import java.util.Date;
+import javax.persistence.Entity;
 import lombok.NoArgsConstructor;
 
 /**
  *
  * @author dioge
  */
+@Entity
 @NoArgsConstructor
-public class Cliente extends Pessoa {
-    
+public class Cliente extends Pessoa {    
     
     
     public Cliente(Long id, String nome, String cpf, String email, Date dataNascimento, String celular) {
         super(id, nome, cpf, email, dataNascimento, celular);
-    }
-
-    
+    }    
     
     
 }

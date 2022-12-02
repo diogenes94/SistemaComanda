@@ -2,6 +2,7 @@ package br.com.unincor.sistemacomanda.model.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -16,6 +18,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  *
@@ -27,10 +30,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
+@ToString
 public class Produto implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     private String nome;
     
@@ -43,6 +47,9 @@ public class Produto implements Serializable {
     
     @Temporal(TemporalType.DATE)
     private Date validade;
+    
+    @ManyToMany(mappedBy = "produtos")
+    List<Pedido> pedidos;
 
     public Produto(Long id, String nome, TipoUnidade tipoUnidade, Double estoque, Double preco, Date validade) {
         this.id = id;
