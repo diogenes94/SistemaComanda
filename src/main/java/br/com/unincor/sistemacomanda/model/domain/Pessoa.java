@@ -30,7 +30,6 @@ import lombok.ToString;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Getter
 @Setter
-@ToString
 @EqualsAndHashCode(of = "id")
 @NoArgsConstructor
 public abstract class Pessoa implements Serializable {
@@ -57,6 +56,11 @@ public abstract class Pessoa implements Serializable {
         this.email = email;
         this.dataNascimento = dataNascimento;
         this.celular = celular;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", email=" + email + ", dataNascimento=" + dataNascimento + ", celular=" + celular + '}';
     }
 
     

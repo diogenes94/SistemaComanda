@@ -20,6 +20,11 @@ public class Cliente extends Pessoa {
     public Cliente(Long id, String nome, String cpf, String email, Date dataNascimento, String celular) {
         super(id, nome, cpf, email, dataNascimento, celular);
     }    
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
     
     
 }

@@ -16,7 +16,20 @@ import javax.persistence.EntityManager;
  */
 public class PedidoDao extends GenericDAO<Pedido, Long>{
     
+    public List<Pedido> buscarPedidosPorCliente(Cliente cliente) {
+        return getEntityManagerReadOnly()
+                .createQuery("from Pedido p where p.cliente = :cliente", Pedido.class)
+                .setParameter("cliente", cliente)
+                .getResultList();
+    }
+    
     public static void main(String[] args) {
+        Cliente cliente = new ClienteDao().findById(3l);
+        new PedidoDao().buscarPedidosPorCliente(cliente)
+                .forEach(System.out::println);
+    }
+    
+    public static void main1(String[] args) {
         Cliente cliente = new ClienteDao().findById(3l);
         List<Produto> produtos = new ProdutoDao().findAll();        
         

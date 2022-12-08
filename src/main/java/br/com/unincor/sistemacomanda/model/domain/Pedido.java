@@ -25,7 +25,6 @@ import lombok.ToString;
 @Setter
 @Entity
 @Table(name = "pedidos")
-@ToString
 public class Pedido implements Serializable {
 
     @Id
@@ -63,4 +62,11 @@ public class Pedido implements Serializable {
     public void calcularValorTotal() {
         this.valorTotal = valorItens + valorEntrega - desconto;
     }
+
+    @Override
+    public String toString() {
+        return "Pedido{" + "id=" + id + ", cliente=" + cliente + ", valorItens=" + valorItens + ", desconto=" + desconto + ", valorEntrega=" + valorEntrega + ", valorTotal=" + valorTotal + '}';
+    }
+    
+    
 }
